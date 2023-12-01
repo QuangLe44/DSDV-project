@@ -1,0 +1,32 @@
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2015/02/09/09/41/background-629463_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 20px;
+  height: 200vh !important;
+  
+}
+.container {
+  padding-top: 50px;
+}
+
+#title {
+  text-align: center;
+}
+
+#description {
+  text-align: left;
+}
+.box {
+  padding-top: 20px;
+}
+
+.box-item {
+  margin: 30px;
+} 
+
+.container {
+    margin: 0;
+} 
+

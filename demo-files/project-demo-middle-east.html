@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Graphs 5</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="continents/middle-east.js"></script>
+</head>
+<body>
+    <div id="demo">
+        <h1>This is a demo</h1>
+    </div>
+
+    <h1>Middle East</h1>
+
+    <!-- Dropdown menu -->
+    <label for="graphSelector">Select a graph:</label>
+    <select id="graphSelector" onchange="updateGraph()">
+        <option value="generation">Net Generation</option>
+        <option value="consumption">Net Consumption</option>
+    </select>
+
+    <div class="task9" id="graphContainer"></div>
+
+    <script>
+        // Function to update the graph based on the dropdown selection
+        function updateGraph() {
+            var selectedGraph = document.getElementById("graphSelector").value;
+
+            // Remove the existing graph
+            d3.select("#graphContainer").selectAll("*").remove();
+
+            // Call the corresponding function based on the selection
+            if (selectedGraph === "generation") {
+                task9();
+            } else if (selectedGraph === "consumption") {
+                task10();
+            }
+        }
+
+        // Initial graph drawing based on the default selection
+        task9();  // Assuming Net Generation is the default graph
+    </script>
+    
+</body>
+</html>

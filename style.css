@@ -30,3 +30,73 @@ body {
     margin: 0;
 } 
 
+.task-controls {
+  display: flex;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.task-controls button {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.task-controls select {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.task {
+  position: relative;
+}
+
+.task1 {
+  position: relative;
+}
+
+.task3 {
+  position: relative;
+}
+
+.task5 {
+  position: relative;
+}
+
+.task7 {
+  position: relative;
+}
+
+.task9 {
+  position: relative;
+}
+
+.task11 {
+  position: relative;
+}
+
+.total {
+  position: relative;
+}
+
+#tooltip {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+#tooltip.hidden {
+  display: none;
+}
+
+/* for selected element in brush area */
+.selected {
+  opacity: 1 !important;
+  stroke: black;
+  stroke-width: 1px;
+}
+

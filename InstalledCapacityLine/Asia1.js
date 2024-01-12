@@ -46,7 +46,7 @@ function task3() {
                 var top5Countries = nestedData1.slice(0, 3);
                 
                 let svg = d3
-                    .select(".task3")
+                    .select(".task1")
                     .append("svg")
                     .attr("width", w)
                     .attr("height", h)

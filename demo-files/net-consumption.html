@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Net Consumption Graphs</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="continents/graphs/net-consumption.js"></script>
+  </head>
+  <body>
+    <div id="demo">
+      <h1>Net Consumption graphs</h1>
+    </div>
+
+    <!-- Dropdown menu -->
+    <label for="graphSelector">Select a continent:</label>
+    <select id="graphSelector" onchange="updateGraph()">
+      <option value="africa">Africa</option>
+      <option value="asia-oceania">Asia - Oceania</option>
+      <option value="central-south-america">Central and South America</option>
+      <option value="europe">Europe</option>
+      <option value="middle-east">Middle East</option>
+      <option value="north-america">North America</option>
+    </select>
+
+    <div class="task" id="graphContainer"></div>
+
+    <script>
+      // Function to update the graph based on the dropdown selection
+      function updateGraph() {
+        var selectedGraph = document.getElementById("graphSelector").value;
+
+        // Remove the existing graph
+        d3.select("#graphContainer").selectAll("*").remove();
+
+        // Call the corresponding function based on the selection
+        if (selectedGraph === "africa") {
+          task2();
+        } else if (selectedGraph === "asia-oceania") {
+          task4();
+        } else if (selectedGraph === "europe") {
+          task6();
+        } else if (selectedGraph === "central-south-america") {
+          task8();
+        } else if (selectedGraph === "middle-east") {
+          task10();
+        } else if (selectedGraph === "north-america") {
+          task12();
+        }
+      }
+
+      // Initial graph drawing based on the default selection
+      task2(); // Assuming Net Generation is the default graph
+    </script>
+  </body>
+</html>

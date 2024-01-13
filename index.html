@@ -1,118 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <!-- Bootstrap CSS link -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+<html>
+<head>
+<title>Electricity Statistic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
 
-  <!-- Bootstrap JS and Popper.js (required for dropdowns) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous"
-  />
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://hammerjs.github.io/dist/hammer-time.min.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
-  />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://gmk.center/wp-content/uploads/2023/07/shutterstock_2173847807-1.png");
+  min-height: 75%;
+}
 
-  <link
-    rel="stylesheet"
-    href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.css"
-  />
-  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+.menu {
+  display: none;
+}
+</style>
+</head>
+<body>
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJHTIlHvZ6tuH6s1ofvHdL2anvpUrmM"
-    crossorigin="anonymous"
-  />
-
-  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-
-  <link rel="stylesheet" href="bebas_neue/bebas_neue.css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic"
-    rel="stylesheet"
-    type="text/css"
-  />
-  <body>
-    <div class="container">
-      <h2 id="title">Global Electricity Statistics (1980-2021)</h2>
-      <p id="description">
-        In this data visualization project, we will cover and discuss about the
-        energy trends and insights from around the globe in the past decade.
-        Here are some statistic that will be included :
-      </p>
-      <ul>
-        <li>Net Generation: Electricity generation/production</li>
-        <li>Net Consumption (billion kWh): Electricity consumption</li>
-        <li>Imports (billion kWh): Electricity imports</li>
-        <li>Exports (billion kWh): Electricity exports</li>
-        <li>
-          Installed Capacity (million kW): The maximum amount of electricity
-          that a generating station (also known as a power plant) can produce
-          under specific conditions designated by the manufacturer
-        </li>
-        <li>
-          Distribution Losses (billion kWh): Transmission and distribution
-          losses refer to the losses that occur in transmission of electricity
-          between the sources of supply and points of distribution.
-        </li>
-      </ul>
-      <div class="dropdown">
-        <a
-          class="btn btn-primary dropdown-toggle"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Net generation
-        </a>
-
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Net Consumption</a></li>
-          <li><a class="dropdown-item" href="#">Imports</a></li>
-          <li><a class="dropdown-item" href="#">Exports</a></li>
-        </ul>
-      </div>
-
-      
-      <div class="box-item">
-        <svg
-          id="LineGraph"
-          style="border: 1px solid black; width: 1050; height: 700px"
-        ></svg>
-      </div>
-      <div id="trend"></div>
-      <div class="box-item">
-        <svg
-          id="scatter"
-          style="border: 1px solid black; width: 1050; height: 700px"
-        ></svg>
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Net Consumption & Net Generation<i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="DSDV-project-main/demo-files/project-demo-africa.html" class="w3-bar-item w3-button">Africa</a>
+        <a href="DSDV-project-main/demo-files/project-demo-north-america.html" class="w3-bar-item w3-button">North America</a>
+        <a href="DSDV-project-main/demo-files/project-demo-asia.html" class="w3-bar-item w3-button">Asia</a>
       </div>
     </div>
-  </body>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Installed Capacity<i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="DSDV-project-main/InstalledCapacityLine/Africa1.html" class="w3-bar-item w3-button">Africa</a>
+        <a href="DSDV-project-main/InstalledCapacityLine/America1.html" class="w3-bar-item w3-button">North America</a>
+        <a href="DSDV-project-main/InstalledCapacityLine/Asia1.html" class="w3-bar-item w3-button">Asia</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Distribution Losses<i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="DSDV-project-main/DistributionLossesLine/Africa.html" class="w3-bar-item w3-button">Africa</a>
+        <a href="DSDV-project-main/DistributionLossesLine/NorthAmerica.html" class="w3-bar-item w3-button">North America</a>
+        <a href="DSDV-project-main/DistributionLossesLine/Asia.html" class="w3-bar-item w3-button">Asia</a>
+      </div>
+    </div>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">Comparision between continents <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="DSDV-project-main/ScatterPlot/NetScatterPlot.html" class="w3-bar-item w3-button">Net Consumption & Net Generation</a>
+        <a href="DSDV-project-main/ScatterPlot/DisLossAndInstalledCapacity.html" class="w3-bar-item w3-button">Installed Capacity & Distribution Losses </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">Global<br>Electricity Statistic</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">About The Project</span></h5>
+    <p>Electricity is one of if not the most important source of energy to operate the world. The discovery of electricity is truly a revolution to the world, and from that many inventions been made.    </p>
+    <p>The project aims to provide a thorough and aesthetically appealing analysis of worldwide electricity statistics concerning installed capacity, distribution loss, net generation, and net consumption. This will aid in improving comprehension of the dynamic global energy consumption and infrastructure development landscape.</p>
+    <img src="https://static.javatpoint.com/blog/images/who-invented-electricity.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu" style="padding-bottom: 80px;">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Downside</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">Energy Loss during Transmission</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+        <div class="w3-col s6 tablink">Climate Change</div>
+      </a>
+    </div>
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Energy losses can occur during the distribution and transmission of power across large distances. A portion of the electricity is lost as heat due to resistance in power lines and transformers, which lowers overall efficiency.</h5>
+    </div>
+
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Higher net consumption means higher more changes to the climate but in a negative way. Emissions of greenhouse gases, air pollutants, and the environmental impact of resource extraction for electricity generation pose significant challenges.</h5>
+      
+    </div>  
+    <img src="https://static.theceomagazine.net/wp-content/uploads/2023/08/09031559/Climate1.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+    <p>The dataset's timeline</p>
+    <div class="w3-light-grey w3-round-xlarge w3-small">
+      <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%; font-size: large;">1980-2021</div>
+    </div>
+    <p>No. of countries available in our data</p>
+    <div class="w3-light-grey w3-round-xlarge w3-small">
+      <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:45%; font-size: large;">
+        <div class="w3-center w3-text-white">79/195</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
 </html>

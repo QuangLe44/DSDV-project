@@ -1,50 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo 2</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="continents/asia-oceania.js"></script>
-</head>
-<body>
-    <div id="demo">
-        <h1>This is a demo</h1>
-    </div>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/9d9fcd5440.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+   
 
-    <h1>Asia</h1>
+    <h1 style="text-align: center">Asia</h1>
 
     <!-- Dropdown menu -->
     <label for="graphSelector3">Select a graph:</label>
     <select id="graphSelector3" onchange="updateGraph3()">
-        <option value="generation">Net Generation</option>
-        <option value="consumption">Net Consumption</option>
+      <option value="generation">Net Generation</option>
+      <option value="consumption">Net Consumption</option>
     </select>
 
     <div class="task3" id="graphContainer3"></div>
 
     <script>
-        // Function to update the graph based on the dropdown selection
-        function updateGraph3() {
-            var selectedGraph = document.getElementById("graphSelector3").value;
+      // Function to update the graph based on the dropdown selection
+      function updateGraph3() {
+        var selectedGraph = document.getElementById("graphSelector3").value;
 
-            // Remove the existing graph
-            d3.select("#graphContainer3").selectAll("*").remove();
+        // Remove the existing graph
+        d3.select("#graphContainer3").selectAll("*").remove();
 
-            // Call the corresponding function based on the selection
-            if (selectedGraph === "generation") {
-                task3();
-            } else if (selectedGraph === "consumption") {
-                task4();
-            }
+        // Call the corresponding function based on the selection
+        if (selectedGraph === "generation") {
+          task3();
+        } else if (selectedGraph === "consumption") {
+          task4();
         }
+      }
 
-        // Initial graph drawing based on the default selection
-        task3();  // Assuming Net Generation is the default graph
-        // task3();
-        // task4();
+      // Initial graph drawing based on the default selection
+      task3(); // Assuming Net Generation is the default graph
+      // task3();
+      // task4();
     </script>
-    
-</body>
+    <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-quarter">
+        <div class="w3-container w3-red w3-padding-16">
+          <div class="w3-left" style="font-size: medium;">No of countries in the graph</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-globe-africa fa-2x"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>15</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-blue w3-padding-16">
+          <div class="w3-left" style="font-size: medium;">#1 Net Generation & Net consumption</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-bolt"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>China </h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-teal w3-padding-16">
+          <div class="w3-left">Total Net Consumption in 2021 :</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-lightbulb"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>12109.01896 billion kWh</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-orange w3-text-white w3-padding-16">
+          <div class="w3-left">Total Net Generation in 2021 :</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-signal"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>12882.22132 billion kWh</h4>
+        </div>
+      </div>
+    </div>
+    <hr style="border: 2px solid black;">
+    <div class="container">
+      <h2 style="margin-right: 20px;">The amount of electricity can be generated in an hour by countries in the world</h2>
+      <img src="z5064152536312_4a8c49220796fd50e7d9918ca5469012.jpg">
+      <p>Key Insights :</p>
+      <p>China is indeed a major player in global electricity generation and consumption, and it has been the world's largest electricity producer for several years. The exact percentage can vary depending on the year and the specific metrics used for measurement.
+
+        In recent years, China has accounted for roughly 25-30% of the world's total electricity generation. While it is a significant portion, it falls short of the 2/3 (approximately 66.7%)</p>
+    </div>
+  </body>
 </html>

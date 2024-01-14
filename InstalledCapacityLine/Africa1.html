@@ -1,25 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo Graphs</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="Africa1.js"></script>
-
-</head>
-<body>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/9d9fcd5440.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div id="demo">
-        <h1>Africa Installed Capacity</h1>
+      <h1 style="text-align: center">Africa Installed Capacity</h1>
     </div>
 
     <div class="task1">
-        <script>
-            task1();
-        </script>
+      <script>
+        task1();
+      </script>
     </div>
-
-
-</body>
+    <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-quarter">
+        <div class="w3-container w3-red w3-padding-16">
+          <div class="w3-left" style="font-size: medium">
+            No of countries in the graph
+          </div>
+          <div class="w3-right">
+            <h3><i class="fas fa-globe-africa fa-2x"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>15</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-blue w3-padding-16">
+          <div class="w3-left" style="font-size: medium">
+            #1 Installed Capacity
+          </div>
+          <div class="w3-right">
+            <h3><i class="fas fa-bolt"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Algeria</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-teal w3-padding-16">
+          <div class="w3-left">Total Installed Capacity in 2021 :</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-lightbulb"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>38.799143 million kW</h4>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

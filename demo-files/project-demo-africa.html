@@ -1,109 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo Graphs</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="continents/africa.js"></script>
-    <script src="continents/asia-oceania.js"></script>
-</head>
-<body>
-    <div id="demo">
-        <h1>This is a demo</h1>
-    </div>
-
-    <h1>Africa</h1>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/9d9fcd5440.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1 style="text-align: center">Africa</h1>
 
     <!-- Dropdown menu -->
     <label for="graphSelector">Select a graph:</label>
     <select id="graphSelector" onchange="updateGraph()">
-        <option value="generation">Net Generation</option>
-        <option value="consumption">Net Consumption</option>
+      <option value="generation">Net Generation</option>
+      <option value="consumption">Net Consumption</option>
     </select>
 
     <div class="task1" id="graphContainer"></div>
-    
+
     <!------------->
-    <h1>Asia</h1>
 
-    <!-- Dropdown menu -->
-    <label for="graphSelector3">Select a graph:</label>
-    <select id="graphSelector3" onchange="updateGraph3()">
-        <option value="generation">Net Generation</option>
-        <option value="consumption">Net Consumption</option>
-    </select>
-
-    <div class="task3" id="graphContainer3"></div>
-    
     <!------------->
-    <h1>Europe</h1>
-
-    <!-- Dropdown menu -->
-    <label for="graphSelector5">Select a graph:</label>
-    <select id="graphSelector5" onchange="updateGraph5()">
-        <option value="generation">Net Generation</option>
-        <option value="consumption">Net Consumption</option>
-    </select>
 
     <div class="task5" id="graphContainer5"></div>
 
     <script>
-        // Function to update the graph based on the dropdown selection
-        function updateGraph() {
-            var selectedGraph = document.getElementById("graphSelector").value;
+      // Function to update the graph based on the dropdown selection
+      function updateGraph() {
+        var selectedGraph = document.getElementById("graphSelector").value;
 
-            // Remove the existing graph
-            d3.select("#graphContainer").selectAll("*").remove();
+        // Remove the existing graph
+        d3.select("#graphContainer").selectAll("*").remove();
 
-            // Call the corresponding function based on the selection
-            if (selectedGraph === "generation") {
-                task1();
-            } else if (selectedGraph === "consumption") {
-                task2();
-            }
+        // Call the corresponding function based on the selection
+        if (selectedGraph === "generation") {
+          task1();
+        } else if (selectedGraph === "consumption") {
+          task2();
         }
+      }
 
-        // Initial graph drawing based on the default selection
-        task1();  // Assuming Net Generation is the default graph
+      // Initial graph drawing based on the default selection
+      task1(); // Assuming Net Generation is the default graph
 
-        // Function to update the graph based on the dropdown selection
-        function updateGraph3() {
-            var selectedGraph = document.getElementById("graphSelector3").value;
+      // Function to update the graph based on the dropdown selection
+      function updateGraph3() {
+        var selectedGraph = document.getElementById("graphSelector3").value;
 
-            // Remove the existing graph
-            d3.select("#graphContainer3").selectAll("*").remove();
+        // Remove the existing graph
+        d3.select("#graphContainer3").selectAll("*").remove();
 
-            // Call the corresponding function based on the selection
-            if (selectedGraph === "generation") {
-                task3();
-            } else if (selectedGraph === "consumption") {
-                task4();
-            }
+        // Call the corresponding function based on the selection
+        if (selectedGraph === "generation") {
+          task3();
+        } else if (selectedGraph === "consumption") {
+          task4();
         }
+      }
 
-        // Initial graph drawing based on the default selection
-        task3();  // Assuming Net Generation is the default graph
+      // Initial graph drawing based on the default selection
+      task3(); // Assuming Net Generation is the default graph
 
-        // Function to update the graph based on the dropdown selection
-        function updateGraph5() {
-            var selectedGraph = document.getElementById("graphSelector5").value;
+      // Function to update the graph based on the dropdown selection
+      function updateGraph5() {
+        var selectedGraph = document.getElementById("graphSelector5").value;
 
-            // Remove the existing graph
-            d3.select("#graphContainer5").selectAll("*").remove();
+        // Remove the existing graph
+        d3.select("#graphContainer5").selectAll("*").remove();
 
-            // Call the corresponding function based on the selection
-            if (selectedGraph === "generation") {
-                task5();
-            } else if (selectedGraph === "consumption") {
-                task6();
-            }
+        // Call the corresponding function based on the selection
+        if (selectedGraph === "generation") {
+          task5();
+        } else if (selectedGraph === "consumption") {
+          task6();
         }
+      }
 
-        // Initial graph drawing based on the default selection
-        task5();  // Assuming Net Generation is the default graph
+      // Initial graph drawing based on the default selection
+      task5(); // Assuming Net Generation is the default graph
     </script>
-    
-</body>
+    <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-quarter">
+        <div class="w3-container w3-red w3-padding-16">
+          <div class="w3-left" style="font-size: medium;">No of countries in the graph</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-globe-africa fa-2x"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>15</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-blue w3-padding-16">
+          <div class="w3-left" style="font-size: medium;">#1 Net Generation & Net consumption</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-bolt"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Algeria</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-teal w3-padding-16">
+          <div class="w3-left">Total Net Consumption in 2021 :</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-lightbulb"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>116.6538666 billion kWh</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-orange w3-text-white w3-padding-16">
+          <div class="w3-left">Total Net Generation in 2021 :</div>
+          <div class="w3-right">
+            <h3><i class="fas fa-signal"></i></h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>133.7072701 billion kWh</h4>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

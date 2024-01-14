@@ -6,6 +6,19 @@
   <title>Scatter Plot</title>
   <!-- Include D3.js version 4 -->
   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/9d9fcd5440.js"
+      crossorigin="anonymous"
+    ></script>
   <style>
     .tooltip {
       position: absolute;
@@ -19,7 +32,9 @@
   </style>
 </head>
 <body>
-
+  <div id="demo">
+    <h1 style="text-align: center;"> Net Generation & Consumption between continents</h1>
+</div>
 <script>
 // Load the CSV file asynchronously
 d3.csv("https://raw.githubusercontent.com/QuangLe44/DSDV-project/main/csv/total%20csv/total%202020(2).csv", function(error, data) {
@@ -137,6 +152,48 @@ d3.csv("https://raw.githubusercontent.com/QuangLe44/DSDV-project/main/csv/total%
   }
 });
 </script>
-
+<div class="w3-row-padding w3-margin-bottom">
+  <div class="w3-quarter">
+    <div class="w3-container w3-red w3-padding-16">
+      <div class="w3-left" style="font-size: medium;">Region with highest net consumption in 2020:</div>
+      <div class="w3-right">
+        <h3><i class="fas fa-globe-africa fa-2x"></i></h3>
+      </div>
+      <div class="w3-clear"></div>
+      <h4>Asia & Oceania</h4>
+    </div>
+  </div>
+  <div class="w3-quarter">
+    <div class="w3-container w3-blue w3-padding-16">
+      <div class="w3-left" style="font-size: medium;">Total net electricity consumption in 2020 for all regions: </div>
+      <div class="w3-right">
+        <h3><i class="fas fa-bolt"></i></h3>
+      </div>
+      <div class="w3-clear"></div>
+      <h4>19068.81287 billion kWh</h4>
+    </div>
+  </div>
+  <div class="w3-quarter">
+    <div class="w3-container w3-teal w3-padding-16">
+      <div class="w3-left">Region with highest net generation in 2020:</div>
+      <div class="w3-right">
+        <h3><i class="fas fa-lightbulb"></i></h3>
+      </div>
+      <div class="w3-clear"></div>
+      <h4>Asia & Oceania</h4>
+    </div>
+  </div>
+  <div class="w3-quarter">
+    <div class="w3-container w3-orange w3-text-white w3-padding-16">
+      <div class="w3-left">Total net electricity generation in 2020 for all regions:</div>
+      <div class="w3-right">
+        <h3><i class="fas fa-signal"></i></h3>
+      </div>
+      <div class="w3-clear"></div>
+      <h4>20459.90854 billion kWh
+      </h4>
+    </div>
+  </div>
+</div>
 </body>
 </html>
